@@ -52,7 +52,8 @@ namespace hackathon {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		System::Windows::Forms::Form ^previousForm;
-		/// </summary>
+	private: System::Windows::Forms::Panel^  panel1;
+			 /// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -67,6 +68,8 @@ namespace hackathon {
 			this->ProjectLabel = (gcnew System::Windows::Forms::Label());
 			this->sexChoice = (gcnew System::Windows::Forms::CheckedListBox());
 			this->Sex = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// QuitButton
@@ -94,14 +97,14 @@ namespace hackathon {
 			// 
 			// sexChoice
 			// 
-			this->sexChoice->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->sexChoice->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->sexChoice->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->sexChoice->Cursor = System::Windows::Forms::Cursors::Default;
 			this->sexChoice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->sexChoice->ForeColor = System::Drawing::SystemColors::InfoText;
 			this->sexChoice->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Fale" });
-			this->sexChoice->Location = System::Drawing::Point(345, 125);
+			this->sexChoice->Location = System::Drawing::Point(41, 35);
 			this->sexChoice->Name = L"sexChoice";
 			this->sexChoice->Size = System::Drawing::Size(119, 34);
 			this->sexChoice->TabIndex = 4;
@@ -110,13 +113,25 @@ namespace hackathon {
 			// Sex
 			// 
 			this->Sex->AutoSize = true;
-			this->Sex->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->Sex->Location = System::Drawing::Point(342, 106);
+			this->Sex->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->Sex->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Sex->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Sex->Location = System::Drawing::Point(0, 0);
 			this->Sex->Name = L"Sex";
-			this->Sex->Size = System::Drawing::Size(34, 16);
+			this->Sex->Size = System::Drawing::Size(43, 23);
 			this->Sex->TabIndex = 5;
 			this->Sex->Text = L"Sex:";
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->panel1->Controls->Add(this->Sex);
+			this->panel1->Controls->Add(this->sexChoice);
+			this->panel1->Location = System::Drawing::Point(318, 122);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(200, 100);
+			this->panel1->TabIndex = 6;
 			// 
 			// RunnerData
 			// 
@@ -124,15 +139,15 @@ namespace hackathon {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(860, 486);
-			this->Controls->Add(this->Sex);
-			this->Controls->Add(this->sexChoice);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->ProjectLabel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"RunnerData";
 			this->Text = L"RunnerData";
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
