@@ -1,4 +1,5 @@
 #pragma once
+#include "ResultWindow.h"
 
 namespace hackathon {
 
@@ -27,6 +28,7 @@ namespace hackathon {
 		RunnerData(System::Windows::Forms::Form ^previousForm) {
 			this->previousForm = previousForm;
 			InitializeComponent();
+			this->CenterToScreen();
 			this->SelectAge->SelectedIndex = 0;
 			this->SelectTime->SelectedIndex = 0;
 			this->SelectDistance->SelectedIndex = 0;
@@ -408,6 +410,9 @@ private: System::Void SelectRecord_SelectedIndexChanged(System::Object^  sender,
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	// create plan button 
+	this->Hide();
+	ResultWindow^ resultWindow = gcnew ResultWindow();
+	resultWindow->ShowDialog();
 }
 private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }

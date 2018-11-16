@@ -22,6 +22,7 @@ namespace hackathon {
 			//
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
+			this->CenterToScreen();
 		}
 
 	protected:

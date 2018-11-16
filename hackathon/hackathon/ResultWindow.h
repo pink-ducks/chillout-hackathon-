@@ -18,6 +18,7 @@ namespace hackathon {
 		ResultWindow(void)
 		{
 			InitializeComponent();
+			this->CenterToScreen();
 			//
 			//TODO: Add the constructor code here
 			//
