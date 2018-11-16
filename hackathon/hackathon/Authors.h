@@ -52,7 +52,9 @@ namespace hackathon {
 		/// Required designer variable.
 
 		System::Windows::Forms::Form ^previousForm;
-		/// </summary>
+	private: System::Windows::Forms::Button^  back;
+
+			 /// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -66,6 +68,7 @@ namespace hackathon {
 			this->QuitButton = (gcnew System::Windows::Forms::Button());
 			this->ProjectLabel = (gcnew System::Windows::Forms::Label());
 			this->authorsImage = (gcnew System::Windows::Forms::PictureBox());
+			this->back = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->authorsImage))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -105,12 +108,27 @@ namespace hackathon {
 			this->authorsImage->TabIndex = 5;
 			this->authorsImage->TabStop = false;
 			// 
+			// back
+			// 
+			this->back->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->back->ForeColor = System::Drawing::Color::White;
+			this->back->Location = System::Drawing::Point(761, 426);
+			this->back->Name = L"back";
+			this->back->Size = System::Drawing::Size(87, 36);
+			this->back->TabIndex = 6;
+			this->back->Text = L"Back";
+			this->back->UseVisualStyleBackColor = false;
+			this->back->Click += gcnew System::EventHandler(this, &Authors::back_Click);
+			// 
 			// Authors
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(860, 486);
+			this->Controls->Add(this->back);
 			this->Controls->Add(this->authorsImage);
 			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->ProjectLabel);
@@ -129,7 +147,11 @@ namespace hackathon {
 		this->Close();
 		this->previousForm->Close();
 	}
-	};
+	private: System::Void back_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Hide();
+		this->previousForm->ShowDialog();
+	}
+};
 
 }
 

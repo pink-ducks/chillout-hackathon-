@@ -156,7 +156,7 @@ namespace hackathon {
 		this->Hide();
 	    Authors^ authors = gcnew Authors(this);
 	    authors->ShowDialog();
-			 }
+	}
 private: System::Void MainWindow_Load(System::Object^  sender, System::EventArgs^  e) {
 }
 
