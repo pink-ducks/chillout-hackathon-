@@ -24,6 +24,9 @@
     <ClCompile Include="Authors.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="ResultWindow.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainWindow.h">
@@ -35,12 +38,18 @@
     <ClInclude Include="Authors.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="ResultWindow.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainWindow.resx">
       <Filter>Pliki zasobów</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="RunnerData.resx">
+      <Filter>Pliki zasobów</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authors.resx">
       <Filter>Pliki zasobów</Filter>
     </EmbeddedResource>
   </ItemGroup>

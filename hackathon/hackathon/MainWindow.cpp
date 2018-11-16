@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include "ResultWindow.h"
 #include <Windows.h>
 
 using namespace hackathon;
