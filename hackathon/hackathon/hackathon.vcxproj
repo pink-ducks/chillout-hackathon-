@@ -131,10 +131,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Authors.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="RunnerData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Authors.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MainWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -143,6 +147,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Authors.resx">
+      <DependentUpon>Authors.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.h</DependentUpon>
     </EmbeddedResource>
