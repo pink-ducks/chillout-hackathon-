@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="Authors.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Runner.cpp" />
     <ClCompile Include="RunnerData.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,7 @@
     <ClInclude Include="MainWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Runner.h" />
     <ClInclude Include="RunnerData.h">
       <FileType>CppForm</FileType>
     </ClInclude>

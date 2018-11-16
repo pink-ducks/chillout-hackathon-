@@ -1,16 +1,18 @@
 #pragma once
-#include<string>
+#include <string>
 
 class Runner {
+
+private:
 	std::string name;
-	bool isMan;
+	bool isMale;
 	int age;
+	int distance;
+	double time;
+	double target;
 
-	Run aim;
-	Run km10Record = 10000;
-
-	// int index; // how good runner is
 public:
-	
-
-}
+	Runner();
+	Runner(std::string, bool, int, int, double, double);
+	~Runner();
+};
