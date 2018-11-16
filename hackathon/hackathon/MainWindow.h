@@ -35,6 +35,7 @@ namespace hackathon {
 			}
 		}
 	private: System::Windows::Forms::Label^  ProjectLabel;
+	private: System::Windows::Forms::Button^  QuitButton;
 	protected:
 
 	protected:
@@ -52,7 +53,9 @@ namespace hackathon {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MainWindow::typeid));
 			this->ProjectLabel = (gcnew System::Windows::Forms::Label());
+			this->QuitButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// ProjectLabel
@@ -68,11 +71,22 @@ namespace hackathon {
 			this->ProjectLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->ProjectLabel->Click += gcnew System::EventHandler(this, &MainWindow::label1_Click);
 			// 
+			// QuitButton
+			// 
+			this->QuitButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"QuitButton.Image")));
+			this->QuitButton->Location = System::Drawing::Point(813, 0);
+			this->QuitButton->Name = L"QuitButton";
+			this->QuitButton->Size = System::Drawing::Size(47, 46);
+			this->QuitButton->TabIndex = 1;
+			this->QuitButton->UseVisualStyleBackColor = true;
+			// 
 			// MainWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->ClientSize = System::Drawing::Size(860, 486);
+			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->ProjectLabel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MainWindow";
