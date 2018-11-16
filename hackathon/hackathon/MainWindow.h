@@ -79,6 +79,7 @@ namespace hackathon {
 			this->QuitButton->Size = System::Drawing::Size(47, 46);
 			this->QuitButton->TabIndex = 1;
 			this->QuitButton->UseVisualStyleBackColor = true;
+			this->QuitButton->Click += gcnew System::EventHandler(this, &MainWindow::QuitButton_Click);
 			// 
 			// MainWindow
 			// 
@@ -96,6 +97,8 @@ namespace hackathon {
 		}
 #pragma endregion
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void QuitButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 	};
 }
