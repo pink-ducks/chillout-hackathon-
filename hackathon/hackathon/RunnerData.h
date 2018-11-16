@@ -75,7 +75,7 @@ namespace hackathon {
 			// QuitButton
 			// 
 			this->QuitButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"QuitButton.Image")));
-			this->QuitButton->Location = System::Drawing::Point(796, 0);
+			this->QuitButton->Location = System::Drawing::Point(813, 0);
 			this->QuitButton->Name = L"QuitButton";
 			this->QuitButton->Size = System::Drawing::Size(47, 46);
 			this->QuitButton->TabIndex = 2;
@@ -99,6 +99,7 @@ namespace hackathon {
 			// 
 			this->sexChoice->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->sexChoice->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->sexChoice->CheckOnClick = true;
 			this->sexChoice->Cursor = System::Windows::Forms::Cursors::Default;
 			this->sexChoice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
