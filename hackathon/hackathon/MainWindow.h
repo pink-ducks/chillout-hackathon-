@@ -89,9 +89,9 @@ namespace hackathon {
 			// 
 			// startButton
 			// 
-			this->startButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
-			this->startButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
+			this->startButton->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->startButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->startButton->ForeColor = System::Drawing::Color::White;
 			this->startButton->Location = System::Drawing::Point(327, 205);
 			this->startButton->Name = L"startButton";
