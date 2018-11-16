@@ -124,7 +124,7 @@ namespace hackathon {
 	}
 	private: System::Void startButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Hide();
-		RunnerData^ runnerData = gcnew RunnerData();
+		RunnerData^ runnerData = gcnew RunnerData(this);
 		runnerData->ShowDialog();
 	}
 };
