@@ -1,0 +1,11 @@
+program generuje plan treningu biegowego
+pyta uzytownika o imie i nazwisko
+jesli uzytknik pierwszy raz uzywa programu, musi podac swoje dane(wiek, plec, rekord zyciowy itp), jesli uzytownik nie zna rekordów na poszczególnych dystansach to proszony jest o podanie spodziewanego czasu na jednym z nich.
+jesli robi to nie pierwszy raz to plik z jego danymi jest w opowiednim pliku tekstowym
+Uzytkownik jest pytany czy ma juz ulozony plan treningowy czy chce ulozyc nowy, jesli ma to plan jest wyszukywany na dysku i ladowany do programu
+Jesli nie ma planu lub chce nowy to generuje mu plan.
+
+
+// mozemy dodac jak bedzie czas
+Program sprawdza który jest dzien tygodnia i pyta jak poszly treningi (czy treing byl latwy, trudny, jak samopoczucie podczas treningu, czy udalo sie zrealizowac caly) 
+i dostosowuje plan do uzytkownika, zmienia pozostale dni treningowe ze wzgledu na to jak poszedl ostatni trening.
