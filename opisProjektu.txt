@@ -5,6 +5,36 @@ jesli robi to nie pierwszy raz to plik z jego danymi jest w opowiednim pliku tek
 Uzytkownik jest pytany czy ma juz ulozony plan treningowy czy chce ulozyc nowy, jesli ma to plan jest wyszukywany na dysku i ladowany do programu
 Jesli nie ma planu lub chce nowy to generuje mu plan.
 
+// dzialanie
+na podstawie danych biegacza(rekordów, plci ....) jest obliczany index biegacza (czyli jak dobry jest).
+plan dzielimy na tygodnie
+
+class plan{
+	std::vector < Week > week;
+
+tygodnie na dni
+
+
+class Week{
+	Phase phase;
+	Days days[7];
+
+enum Phase{ base, build, peak, taper} 
+// sa 4 fazy treningowe 
+base - baza, duzo kilometor, ale wolno
+build - tyle samo km co w base, tylko troche wiecej szybszych treingów ( czyli troche progowych i nie za duzo interwalów)
+peak - faza szybka, raz w tygodniu interwaly, raz w tygodniu progowy
+taper - odpoczynek przed zawodami, mniej kilometrów i treingów
+
+kazdy dzien bedzie mial przypisany jeden z obiektow:
+
+- restDay 		(brak treingu)
+- rozbieganie		(ciaglosc tak, dlugosc srednia, tempo wolne)
+- bieg spokojny		(ciaglosc tak, dlugosc dlugi, tempo srednio-wolne)
+- bieg progowy		(ciaglosc tak, dlugosc krótki, tempo srednio-szybkie) 
+- interwaly		(ciaglosc: odcinki po taka sama ilosc powtórzen np. 8x400m, dlugosc bardzo krótki, tempo szybkie) 
+	
+
 
 // mozemy dodac jak bedzie czas
 Program sprawdza który jest dzien tygodnia i pyta jak poszly treningi (czy treing byl latwy, trudny, jak samopoczucie podczas treningu, czy udalo sie zrealizowac caly) 
