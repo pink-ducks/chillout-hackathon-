@@ -159,6 +159,9 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResultWindow.resx">
+      <DependentUpon>ResultWindow.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RunnerData.resx">
       <DependentUpon>RunnerData.h</DependentUpon>
     </EmbeddedResource>
