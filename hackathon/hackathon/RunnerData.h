@@ -104,10 +104,10 @@ namespace hackathon {
 			this->sexChoice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->sexChoice->ForeColor = System::Drawing::SystemColors::InfoText;
-			this->sexChoice->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Fale" });
-			this->sexChoice->Location = System::Drawing::Point(41, 35);
+			this->sexChoice->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Female" });
+			this->sexChoice->Location = System::Drawing::Point(42, 26);
 			this->sexChoice->Name = L"sexChoice";
-			this->sexChoice->Size = System::Drawing::Size(119, 34);
+			this->sexChoice->Size = System::Drawing::Size(119, 51);
 			this->sexChoice->TabIndex = 4;
 			this->sexChoice->SelectedIndexChanged += gcnew System::EventHandler(this, &RunnerData::sexChoice_SelectedIndexChanged);
 			// 
@@ -140,6 +140,7 @@ namespace hackathon {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(860, 486);
+			this->ControlBox = false;
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->ProjectLabel);
