@@ -1,4 +1,5 @@
 #pragma once
+#include "RunnerData.h"
 
 namespace hackathon {
 
@@ -37,6 +38,7 @@ namespace hackathon {
 	private: System::Windows::Forms::Label^  ProjectLabel;
 	private: System::Windows::Forms::Button^  QuitButton;
 	private: System::Windows::Forms::Button^  startButton;
+
 
 	protected:
 
@@ -97,7 +99,7 @@ namespace hackathon {
 			this->startButton->TabIndex = 0;
 			this->startButton->Text = L"Make your own training plan!";
 			this->startButton->UseVisualStyleBackColor = false;
-			this->startButton->Click += gcnew System::EventHandler(this, &MainWindow::button1_Click);
+			this->startButton->Click += gcnew System::EventHandler(this, &MainWindow::startButton_Click);
 			// 
 			// MainWindow
 			// 
@@ -120,7 +122,10 @@ namespace hackathon {
 	private: System::Void QuitButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void startButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Hide();
+		RunnerData^ runnerData = gcnew RunnerData();
+		runnerData->ShowDialog();
 	}
 };
 }

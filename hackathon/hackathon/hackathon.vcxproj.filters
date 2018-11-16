@@ -34,5 +34,8 @@
     <EmbeddedResource Include="MainWindow.resx">
       <Filter>Pliki zasobów</Filter>
     </EmbeddedResource>
+    <EmbeddedResource Include="RunnerData.resx">
+      <Filter>Pliki zasobów</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
