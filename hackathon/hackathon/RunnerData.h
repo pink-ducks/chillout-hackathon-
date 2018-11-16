@@ -18,6 +18,7 @@ namespace hackathon {
 		RunnerData(void)
 		{
 			InitializeComponent();
+			this->SelectAge->SelectedIndex = 0;
 			//
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
@@ -26,6 +27,7 @@ namespace hackathon {
 		RunnerData(System::Windows::Forms::Form ^previousForm) {
 			this->previousForm = previousForm;
 			InitializeComponent();
+			this->SelectAge->SelectedIndex = 0;
 		}
 
 	protected:
@@ -53,6 +55,12 @@ namespace hackathon {
 		/// Wymagana zmienna projektanta.
 		System::Windows::Forms::Form ^previousForm;
 	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::Label^  Age;
+	private: System::Windows::Forms::Label^  Record;
+	private: System::Windows::Forms::ComboBox^  SelectAge;
+
+
+
 			 /// </summary>
 		System::ComponentModel::Container ^components;
 
@@ -69,6 +77,9 @@ namespace hackathon {
 			this->sexChoice = (gcnew System::Windows::Forms::CheckedListBox());
 			this->Sex = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->SelectAge = (gcnew System::Windows::Forms::ComboBox());
+			this->Record = (gcnew System::Windows::Forms::Label());
+			this->Age = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -101,13 +112,13 @@ namespace hackathon {
 			this->sexChoice->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->sexChoice->CheckOnClick = true;
 			this->sexChoice->Cursor = System::Windows::Forms::Cursors::Default;
-			this->sexChoice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->sexChoice->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->sexChoice->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->sexChoice->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->sexChoice->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Female" });
-			this->sexChoice->Location = System::Drawing::Point(120, 54);
+			this->sexChoice->Location = System::Drawing::Point(157, 30);
 			this->sexChoice->Name = L"sexChoice";
-			this->sexChoice->Size = System::Drawing::Size(119, 51);
+			this->sexChoice->Size = System::Drawing::Size(119, 44);
 			this->sexChoice->TabIndex = 4;
 			this->sexChoice->SelectedIndexChanged += gcnew System::EventHandler(this, &RunnerData::sexChoice_SelectedIndexChanged);
 			// 
@@ -120,19 +131,63 @@ namespace hackathon {
 			this->Sex->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->Sex->Location = System::Drawing::Point(0, 0);
 			this->Sex->Name = L"Sex";
-			this->Sex->Size = System::Drawing::Size(43, 23);
+			this->Sex->Size = System::Drawing::Size(39, 23);
 			this->Sex->TabIndex = 5;
-			this->Sex->Text = L"Sex:";
+			this->Sex->Text = L"Sex";
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->panel1->Controls->Add(this->SelectAge);
+			this->panel1->Controls->Add(this->Record);
+			this->panel1->Controls->Add(this->Age);
 			this->panel1->Controls->Add(this->Sex);
 			this->panel1->Controls->Add(this->sexChoice);
 			this->panel1->Location = System::Drawing::Point(240, 91);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(400, 365);
 			this->panel1->TabIndex = 6;
+			// 
+			// SelectAge
+			// 
+			this->SelectAge->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->SelectAge->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->SelectAge->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->SelectAge->FormattingEnabled = true;
+			this->SelectAge->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
+				L"14 - 16", L"17 - 19", L"19 - 30", L"31 - 40",
+					L"41 - 50", L"50+"
+			});
+			this->SelectAge->Location = System::Drawing::Point(144, 149);
+			this->SelectAge->Name = L"SelectAge";
+			this->SelectAge->Size = System::Drawing::Size(121, 28);
+			this->SelectAge->TabIndex = 9;
+			this->SelectAge->SelectedIndexChanged += gcnew System::EventHandler(this, &RunnerData::SelectAge_SelectedIndexChanged);
+			// 
+			// Record
+			// 
+			this->Record->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Record->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Record->Location = System::Drawing::Point(0, 245);
+			this->Record->Name = L"Record";
+			this->Record->Size = System::Drawing::Size(74, 23);
+			this->Record->TabIndex = 8;
+			this->Record->Text = L"Record";
+			this->Record->Click += gcnew System::EventHandler(this, &RunnerData::label1_Click_1);
+			// 
+			// Age
+			// 
+			this->Age->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Age->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Age->Location = System::Drawing::Point(0, 114);
+			this->Age->Name = L"Age";
+			this->Age->Size = System::Drawing::Size(61, 23);
+			this->Age->TabIndex = 7;
+			this->Age->Text = L"Age";
+			this->Age->Click += gcnew System::EventHandler(this, &RunnerData::label1_Click);
 			// 
 			// RunnerData
 			// 
@@ -170,6 +225,14 @@ namespace hackathon {
 			this->sexChoice->SetItemChecked(0, 0);
 		}
 	}
-	};
+	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+private: System::Void label1_Click_1(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void SelectAge_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+
+
+}
+};
 
 }
