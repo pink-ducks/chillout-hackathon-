@@ -105,7 +105,7 @@ namespace hackathon {
 				static_cast<System::Byte>(238)));
 			this->sexChoice->ForeColor = System::Drawing::SystemColors::InfoText;
 			this->sexChoice->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Female" });
-			this->sexChoice->Location = System::Drawing::Point(42, 26);
+			this->sexChoice->Location = System::Drawing::Point(120, 54);
 			this->sexChoice->Name = L"sexChoice";
 			this->sexChoice->Size = System::Drawing::Size(119, 51);
 			this->sexChoice->TabIndex = 4;
@@ -129,9 +129,9 @@ namespace hackathon {
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->panel1->Controls->Add(this->Sex);
 			this->panel1->Controls->Add(this->sexChoice);
-			this->panel1->Location = System::Drawing::Point(318, 122);
+			this->panel1->Location = System::Drawing::Point(240, 91);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(200, 100);
+			this->panel1->Size = System::Drawing::Size(400, 365);
 			this->panel1->TabIndex = 6;
 			// 
 			// RunnerData
@@ -161,6 +161,14 @@ namespace hackathon {
 
 	private: System::Void sexChoice_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	
+		if (this->sexChoice->SelectedIndex == 0)
+		{
+			this->sexChoice->SetItemChecked(1, 0);
+		}
+		else
+		{
+			this->sexChoice->SetItemChecked(0, 0);
+		}
 	}
 	};
 
