@@ -28,6 +28,8 @@ namespace hackathon {
 			this->previousForm = previousForm;
 			InitializeComponent();
 			this->SelectAge->SelectedIndex = 0;
+			this->SelectTime->SelectedIndex = 0;
+			this->SelectDistance->SelectedIndex = 0;
 		}
 
 	protected:
@@ -58,6 +60,16 @@ namespace hackathon {
 	private: System::Windows::Forms::Label^  Age;
 	private: System::Windows::Forms::Label^  Record;
 	private: System::Windows::Forms::ComboBox^  SelectAge;
+	private: System::Windows::Forms::ComboBox^  SelectDistance;
+	private: System::Windows::Forms::Label^  Time;
+	private: System::Windows::Forms::Label^  Distance;
+	private: System::Windows::Forms::ComboBox^  SelectTime;
+	private: System::Windows::Forms::Label^  inLabel;
+
+
+
+
+
 
 
 
@@ -77,6 +89,11 @@ namespace hackathon {
 			this->sexChoice = (gcnew System::Windows::Forms::CheckedListBox());
 			this->Sex = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->inLabel = (gcnew System::Windows::Forms::Label());
+			this->SelectTime = (gcnew System::Windows::Forms::ComboBox());
+			this->Time = (gcnew System::Windows::Forms::Label());
+			this->Distance = (gcnew System::Windows::Forms::Label());
+			this->SelectDistance = (gcnew System::Windows::Forms::ComboBox());
 			this->SelectAge = (gcnew System::Windows::Forms::ComboBox());
 			this->Record = (gcnew System::Windows::Forms::Label());
 			this->Age = (gcnew System::Windows::Forms::Label());
@@ -103,7 +120,7 @@ namespace hackathon {
 			this->ProjectLabel->Name = L"ProjectLabel";
 			this->ProjectLabel->Size = System::Drawing::Size(860, 76);
 			this->ProjectLabel->TabIndex = 3;
-			this->ProjectLabel->Text = L"Put in your date";
+			this->ProjectLabel->Text = L"Put in your data";
 			this->ProjectLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// sexChoice
@@ -138,6 +155,11 @@ namespace hackathon {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveBorder;
+			this->panel1->Controls->Add(this->inLabel);
+			this->panel1->Controls->Add(this->SelectTime);
+			this->panel1->Controls->Add(this->Time);
+			this->panel1->Controls->Add(this->Distance);
+			this->panel1->Controls->Add(this->SelectDistance);
 			this->panel1->Controls->Add(this->SelectAge);
 			this->panel1->Controls->Add(this->Record);
 			this->panel1->Controls->Add(this->Age);
@@ -148,18 +170,86 @@ namespace hackathon {
 			this->panel1->Size = System::Drawing::Size(400, 365);
 			this->panel1->TabIndex = 6;
 			// 
+			// inLabel
+			// 
+			this->inLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->inLabel->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->inLabel->Location = System::Drawing::Point(201, 205);
+			this->inLabel->Name = L"inLabel";
+			this->inLabel->Size = System::Drawing::Size(25, 23);
+			this->inLabel->TabIndex = 15;
+			this->inLabel->Text = L"in";
+			this->inLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// SelectTime
+			// 
+			this->SelectTime->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->SelectTime->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->SelectTime->ForeColor = System::Drawing::SystemColors::Desktop;
+			this->SelectTime->FormattingEnabled = true;
+			this->SelectTime->Items->AddRange(gcnew cli::array< System::Object^  >(25) {
+				L"0:00 - 6:00", L"6:01 - 7:00", L"7:01 - 8:00",
+					L"8:01 - 9:00", L"9:01 - 10:00", L"10:01 - 11:00", L"11:01 - 12:00", L"12:01 - 13:00", L"13:01 - 14:00", L"14:01 - 15:00", L"15:01 - 17:30",
+					L"17:31 - 20:00", L"20:01 - 22:30", L"22:31 - 25:00", L"25:01 - 27:30", L"27:31 - 30:00", L"30:01 - 35:00", L"35:01 - 40:00",
+					L"40:01 - 45:00", L"45:01 - 50:00", L"50:01 - 55:00", L"55:01 - 60:00", L"60:01 - 65:00", L"65:01 - 70:00", L"No Idea"
+			});
+			this->SelectTime->Location = System::Drawing::Point(225, 201);
+			this->SelectTime->Name = L"SelectTime";
+			this->SelectTime->Size = System::Drawing::Size(121, 28);
+			this->SelectTime->TabIndex = 14;
+			// 
+			// Time
+			// 
+			this->Time->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Time->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Time->Location = System::Drawing::Point(225, 234);
+			this->Time->Name = L"Time";
+			this->Time->Size = System::Drawing::Size(121, 23);
+			this->Time->TabIndex = 13;
+			this->Time->Text = L"Time";
+			this->Time->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Distance
+			// 
+			this->Distance->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Distance->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Distance->Location = System::Drawing::Point(74, 232);
+			this->Distance->Name = L"Distance";
+			this->Distance->Size = System::Drawing::Size(121, 23);
+			this->Distance->TabIndex = 12;
+			this->Distance->Text = L"Distance";
+			this->Distance->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// SelectDistance
+			// 
+			this->SelectDistance->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->SelectDistance->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->SelectDistance->ForeColor = System::Drawing::SystemColors::Desktop;
+			this->SelectDistance->FormattingEnabled = true;
+			this->SelectDistance->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"2 km", L"5 km", L"10 km" });
+			this->SelectDistance->Location = System::Drawing::Point(74, 201);
+			this->SelectDistance->Name = L"SelectDistance";
+			this->SelectDistance->Size = System::Drawing::Size(121, 28);
+			this->SelectDistance->TabIndex = 10;
+			this->SelectDistance->SelectedIndexChanged += gcnew System::EventHandler(this, &RunnerData::SelectRecord_SelectedIndexChanged);
+			// 
 			// SelectAge
 			// 
 			this->SelectAge->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->SelectAge->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->SelectAge->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->SelectAge->ForeColor = System::Drawing::SystemColors::Desktop;
 			this->SelectAge->FormattingEnabled = true;
 			this->SelectAge->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
 				L"14 - 16", L"17 - 19", L"19 - 30", L"31 - 40",
 					L"41 - 50", L"50+"
 			});
-			this->SelectAge->Location = System::Drawing::Point(144, 149);
+			this->SelectAge->Location = System::Drawing::Point(129, 109);
 			this->SelectAge->Name = L"SelectAge";
 			this->SelectAge->Size = System::Drawing::Size(121, 28);
 			this->SelectAge->TabIndex = 9;
@@ -170,7 +260,7 @@ namespace hackathon {
 			this->Record->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Record->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Record->Location = System::Drawing::Point(0, 245);
+			this->Record->Location = System::Drawing::Point(0, 166);
 			this->Record->Name = L"Record";
 			this->Record->Size = System::Drawing::Size(74, 23);
 			this->Record->TabIndex = 8;
@@ -182,7 +272,7 @@ namespace hackathon {
 			this->Age->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Age->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Age->Location = System::Drawing::Point(0, 114);
+			this->Age->Location = System::Drawing::Point(0, 82);
 			this->Age->Name = L"Age";
 			this->Age->Size = System::Drawing::Size(61, 23);
 			this->Age->TabIndex = 7;
@@ -232,6 +322,8 @@ private: System::Void label1_Click_1(System::Object^  sender, System::EventArgs^
 private: System::Void SelectAge_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 
 
+}
+private: System::Void SelectRecord_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 
