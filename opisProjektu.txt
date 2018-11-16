@@ -37,5 +37,9 @@ kazdy dzien bedzie mial przypisany jeden z obiektow:
 
 
 // mozemy dodac jak bedzie czas
-Program sprawdza który jest dzien tygodnia i pyta jak poszly treningi (czy treing byl latwy, trudny, jak samopoczucie podczas treningu, czy udalo sie zrealizowac caly) 
+-Program sprawdza który jest dzien tygodnia i pyta jak poszly treningi (czy treing byl latwy, trudny, jak samopoczucie podczas treningu, czy udalo sie zrealizowac caly) 
 i dostosowuje plan do uzytkownika, zmienia pozostale dni treningowe ze wzgledu na to jak poszedl ostatni trening.
+-Czasy pojawiaj¹ siê dopiero po wybraniu dystansu
+
+
+
