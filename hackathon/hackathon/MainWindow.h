@@ -36,6 +36,8 @@ namespace hackathon {
 		}
 	private: System::Windows::Forms::Label^  ProjectLabel;
 	private: System::Windows::Forms::Button^  QuitButton;
+	private: System::Windows::Forms::Button^  startButton;
+
 	protected:
 
 	protected:
@@ -56,6 +58,7 @@ namespace hackathon {
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MainWindow::typeid));
 			this->ProjectLabel = (gcnew System::Windows::Forms::Label());
 			this->QuitButton = (gcnew System::Windows::Forms::Button());
+			this->startButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// ProjectLabel
@@ -63,6 +66,7 @@ namespace hackathon {
 			this->ProjectLabel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ProjectLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
+			this->ProjectLabel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->ProjectLabel->Location = System::Drawing::Point(0, 0);
 			this->ProjectLabel->Name = L"ProjectLabel";
 			this->ProjectLabel->Size = System::Drawing::Size(860, 76);
@@ -81,12 +85,27 @@ namespace hackathon {
 			this->QuitButton->UseVisualStyleBackColor = true;
 			this->QuitButton->Click += gcnew System::EventHandler(this, &MainWindow::QuitButton_Click);
 			// 
+			// startButton
+			// 
+			this->startButton->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			this->startButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->startButton->ForeColor = System::Drawing::Color::White;
+			this->startButton->Location = System::Drawing::Point(327, 205);
+			this->startButton->Name = L"startButton";
+			this->startButton->Size = System::Drawing::Size(202, 68);
+			this->startButton->TabIndex = 0;
+			this->startButton->Text = L"Make your own training plan!";
+			this->startButton->UseVisualStyleBackColor = false;
+			this->startButton->Click += gcnew System::EventHandler(this, &MainWindow::button1_Click);
+			// 
 			// MainWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(860, 486);
+			this->Controls->Add(this->startButton);
 			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->ProjectLabel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -99,6 +118,9 @@ namespace hackathon {
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void QuitButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Close();
 	}
-	};
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }
