@@ -87,7 +87,7 @@ namespace hackathon {
 			this->ProjectLabel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->ProjectLabel->Location = System::Drawing::Point(0, 0);
 			this->ProjectLabel->Name = L"ProjectLabel";
-			this->ProjectLabel->Size = System::Drawing::Size(844, 76);
+			this->ProjectLabel->Size = System::Drawing::Size(860, 76);
 			this->ProjectLabel->TabIndex = 3;
 			this->ProjectLabel->Text = L"Put in your date";
 			this->ProjectLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -123,7 +123,7 @@ namespace hackathon {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(844, 447);
+			this->ClientSize = System::Drawing::Size(860, 486);
 			this->Controls->Add(this->Sex);
 			this->Controls->Add(this->sexChoice);
 			this->Controls->Add(this->QuitButton);
