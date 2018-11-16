@@ -23,6 +23,12 @@ namespace hackathon {
 			//
 		}
 
+		Authors(System::Windows::Forms::Form ^previousForm) {
+			this->previousForm = previousForm;
+			InitializeComponent();
+		}
+
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -44,6 +50,8 @@ namespace hackathon {
 	private:
 		/// <summary>
 		/// Required designer variable.
+
+		System::Windows::Forms::Form ^previousForm;
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
@@ -65,12 +73,12 @@ namespace hackathon {
 			// 
 			this->QuitButton->BackColor = System::Drawing::Color::Transparent;
 			this->QuitButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"QuitButton.Image")));
-			this->QuitButton->Location = System::Drawing::Point(1084, 0);
-			this->QuitButton->Margin = System::Windows::Forms::Padding(4);
+			this->QuitButton->Location = System::Drawing::Point(813, 0);
 			this->QuitButton->Name = L"QuitButton";
-			this->QuitButton->Size = System::Drawing::Size(63, 57);
+			this->QuitButton->Size = System::Drawing::Size(47, 46);
 			this->QuitButton->TabIndex = 4;
 			this->QuitButton->UseVisualStyleBackColor = false;
+			this->QuitButton->Click += gcnew System::EventHandler(this, &Authors::QuitButton_Click);
 			// 
 			// ProjectLabel
 			// 
@@ -79,33 +87,35 @@ namespace hackathon {
 				static_cast<System::Byte>(238)));
 			this->ProjectLabel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->ProjectLabel->Location = System::Drawing::Point(0, 0);
-			this->ProjectLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->ProjectLabel->Name = L"ProjectLabel";
-			this->ProjectLabel->Size = System::Drawing::Size(1147, 94);
+			this->ProjectLabel->Size = System::Drawing::Size(860, 76);
 			this->ProjectLabel->TabIndex = 3;
-			this->ProjectLabel->Text = L"Your training plan";
+			this->ProjectLabel->Text = L"Authors";
 			this->ProjectLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->ProjectLabel->Click += gcnew System::EventHandler(this, &Authors::ProjectLabel_Click);
 			// 
 			// authorsImage
 			// 
 			this->authorsImage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"authorsImage.Image")));
 			this->authorsImage->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"authorsImage.InitialImage")));
-			this->authorsImage->Location = System::Drawing::Point(250, 107);
+			this->authorsImage->Location = System::Drawing::Point(101, 68);
+			this->authorsImage->Margin = System::Windows::Forms::Padding(2);
 			this->authorsImage->Name = L"authorsImage";
-			this->authorsImage->Size = System::Drawing::Size(632, 418);
+			this->authorsImage->Size = System::Drawing::Size(643, 381);
 			this->authorsImage->TabIndex = 5;
 			this->authorsImage->TabStop = false;
 			// 
 			// Authors
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(1147, 598);
+			this->ClientSize = System::Drawing::Size(860, 486);
 			this->Controls->Add(this->authorsImage);
 			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->ProjectLabel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Authors";
 			this->Text = L"Authors";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->authorsImage))->EndInit();
@@ -113,5 +123,13 @@ namespace hackathon {
 
 		}
 #pragma endregion
+	private: System::Void ProjectLabel_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void QuitButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Close();
+		this->previousForm->Close();
+	}
 	};
+
 }
+

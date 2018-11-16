@@ -152,12 +152,13 @@ namespace hackathon {
 		RunnerData^ runnerData = gcnew RunnerData(this);
 		runnerData->ShowDialog();
 	}
+	private: System::Void credits_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Hide();
+	    Authors^ authors = gcnew Authors(this);
+	    authors->ShowDialog();
+			 }
 private: System::Void MainWindow_Load(System::Object^  sender, System::EventArgs^  e) {
 }
-private: System::Void credits_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->Hide();
-	Authors^ authors = gcnew Authors();
-	authors->ShowDialog();
-}
+
 };
 }
