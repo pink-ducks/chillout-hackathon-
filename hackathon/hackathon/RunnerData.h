@@ -100,12 +100,12 @@ namespace hackathon {
 			this->sexChoice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->sexChoice->ForeColor = System::Drawing::SystemColors::InfoText;
-			this->sexChoice->FormattingEnabled = true;
 			this->sexChoice->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Male", L"Fale" });
 			this->sexChoice->Location = System::Drawing::Point(345, 125);
 			this->sexChoice->Name = L"sexChoice";
 			this->sexChoice->Size = System::Drawing::Size(119, 34);
 			this->sexChoice->TabIndex = 4;
+			this->sexChoice->SelectedIndexChanged += gcnew System::EventHandler(this, &RunnerData::sexChoice_SelectedIndexChanged);
 			// 
 			// Sex
 			// 
@@ -140,6 +140,10 @@ namespace hackathon {
 	private: System::Void QuitButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 		this->previousForm->Close();
+	}
+
+	private: System::Void sexChoice_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+
 	}
 	};
 

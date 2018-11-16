@@ -79,12 +79,13 @@ namespace hackathon {
 			// 
 			// QuitButton
 			// 
+			this->QuitButton->BackColor = System::Drawing::Color::Transparent;
 			this->QuitButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"QuitButton.Image")));
 			this->QuitButton->Location = System::Drawing::Point(813, 0);
 			this->QuitButton->Name = L"QuitButton";
 			this->QuitButton->Size = System::Drawing::Size(47, 46);
 			this->QuitButton->TabIndex = 1;
-			this->QuitButton->UseVisualStyleBackColor = true;
+			this->QuitButton->UseVisualStyleBackColor = false;
 			this->QuitButton->Click += gcnew System::EventHandler(this, &MainWindow::QuitButton_Click);
 			// 
 			// startButton
