@@ -3,6 +3,7 @@
 #include "Runner.h"
 #include "SaveToFile.h"
 #include "defines.hpp"
+#include <msclr\marshal_cppstd.h>
 
 namespace hackathon {
 
@@ -515,7 +516,12 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	{
 		// creating plan
 		Runner test;
-		CsvFile saveFile("../result.csv");
+		string filename;
+		System::String^ userName = this->WriteName->Text;
+		filename = "../" + msclr::interop::marshal_as<std::string>(userName); // convert text to string 
+		filename += ".csv";
+
+		CsvFile saveFile(filename);
 		std::vector <Week> weeks;
 		Week week1("rest", "rest", "rest", "rest", "super mega heavy run 2000km in 24h", "rest", "rest");
 		Week week2("rest", "rest", "rest", "rest", "rest", "rest", "rest");
