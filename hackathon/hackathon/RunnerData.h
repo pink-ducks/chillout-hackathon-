@@ -516,6 +516,9 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	{
 		// creating plan
 		Runner test;
+
+		// save file 
+
 		string filename;
 		System::String^ userName = this->WriteName->Text;
 		filename = "../" + msclr::interop::marshal_as<std::string>(userName); // convert text to string 

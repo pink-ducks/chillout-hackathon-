@@ -10,6 +10,13 @@ isMale(isMale), age(age), timeIndex(timeIndex), target(target)
 {
 }
 
+Runner::Runner(bool isMale, int SelectedTimeIndex, int SelectedTargetIndex)
+{								
+	this->isMale = isMale;
+	this->timeIndex = SelectedTimeIndex;
+	this->target = SelectedTargetIndex;
+}
+
 Runner::~Runner()
 {
 }
