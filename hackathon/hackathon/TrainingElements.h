@@ -1,6 +1,7 @@
 #pragma once
 #include"Run.h"
 #include "Runner.h"
+
 class TrainingElements {
 private:
 	Run base1[7];
@@ -14,7 +15,6 @@ private:
 
 	Run tapering1[7];
 	Run tapering2[7];
-	Run tapering3[7];
 
 public:
 	TrainingElements();
