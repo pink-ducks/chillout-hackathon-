@@ -44,3 +44,17 @@ void Runner::makeIndex()
 {
 	index = 20 + timeIndex + isMale;
 }
+
+void Runner::calculateTrainingDaysAWeek()
+{
+	if (index < 22)
+		trainingDaysAWeek = 2;
+	if (index > 22 && index <= 24)
+		trainingDaysAWeek = 3;
+	if (index > 24 && index <= 26)
+		trainingDaysAWeek = 4;
+	if (index > 26 && index <= 28)
+		trainingDaysAWeek = 5;
+	if (index > 28)
+		trainingDaysAWeek = 6;
+}

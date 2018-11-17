@@ -9,7 +9,7 @@ private:
 	int age;
 	
 	//int distance;	// personal best distance
-	int timeIndex;S
+	int timeIndex;
 	double target;	// target distance
 
 	int index; // index for runner, how good runner is
@@ -27,4 +27,5 @@ public:
 	double getTarget() const;
 
 	void makeIndex();
+	void calculateTrainingDaysAWeek();
 };
