@@ -275,9 +275,19 @@ namespace hackathon {
 		}
 #pragma endregion
 private: System::Void NextButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->weekNumber++;
-	this->WeekLabel->Text = "Week " + this->weekNumber;
-	this->BackButton->Show();
+	int const maxWeekNumber = 200;
+	if (this->weekNumber != maxWeekNumber)
+	{
+		this->weekNumber++;
+		this->WeekLabel->Text = "Week " + this->weekNumber;
+		this->BackButton->Show();
+	}
+	else
+	{
+		this->weekNumber = 200;
+		this->WeekLabel->Text = "Week 200";
+		this->BackButton->Show();
+	}
 }
 private: System::Void BackButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->weekNumber--;
