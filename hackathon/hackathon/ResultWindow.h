@@ -64,6 +64,7 @@ namespace hackathon {
 
 
 	private: System::Windows::Forms::Button^  Monday;
+	private: System::Windows::Forms::Button^  QuitButton;
 
 
 			 /// Required designer variable.
@@ -80,16 +81,17 @@ namespace hackathon {
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(ResultWindow::typeid));
 			this->ProjectLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Sunday = (gcnew System::Windows::Forms::Button());
+			this->Saturday = (gcnew System::Windows::Forms::Button());
+			this->Friday = (gcnew System::Windows::Forms::Button());
+			this->Thursday = (gcnew System::Windows::Forms::Button());
+			this->Wednesday = (gcnew System::Windows::Forms::Button());
+			this->Tuesday = (gcnew System::Windows::Forms::Button());
+			this->Monday = (gcnew System::Windows::Forms::Button());
 			this->BackButton = (gcnew System::Windows::Forms::Button());
 			this->NextButton = (gcnew System::Windows::Forms::Button());
 			this->WeekLabel = (gcnew System::Windows::Forms::Label());
-			this->Monday = (gcnew System::Windows::Forms::Button());
-			this->Tuesday = (gcnew System::Windows::Forms::Button());
-			this->Wednesday = (gcnew System::Windows::Forms::Button());
-			this->Thursday = (gcnew System::Windows::Forms::Button());
-			this->Friday = (gcnew System::Windows::Forms::Button());
-			this->Saturday = (gcnew System::Windows::Forms::Button());
-			this->Sunday = (gcnew System::Windows::Forms::Button());
+			this->QuitButton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -123,6 +125,104 @@ namespace hackathon {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(800, 381);
 			this->panel1->TabIndex = 2;
+			// 
+			// Sunday
+			// 
+			this->Sunday->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->Sunday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
+			this->Sunday->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Sunday->Location = System::Drawing::Point(669, 110);
+			this->Sunday->Name = L"Sunday";
+			this->Sunday->Size = System::Drawing::Size(100, 210);
+			this->Sunday->TabIndex = 9;
+			this->Sunday->Text = L"Sunday";
+			this->Sunday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->Sunday->UseVisualStyleBackColor = false;
+			this->Sunday->Click += gcnew System::EventHandler(this, &ResultWindow::Sunday_Click);
+			// 
+			// Saturday
+			// 
+			this->Saturday->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->Saturday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
+			this->Saturday->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Saturday->Location = System::Drawing::Point(563, 110);
+			this->Saturday->Name = L"Saturday";
+			this->Saturday->Size = System::Drawing::Size(100, 210);
+			this->Saturday->TabIndex = 8;
+			this->Saturday->Text = L"Saturday";
+			this->Saturday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->Saturday->UseVisualStyleBackColor = false;
+			this->Saturday->Click += gcnew System::EventHandler(this, &ResultWindow::Saturday_Click);
+			// 
+			// Friday
+			// 
+			this->Friday->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->Friday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
+			this->Friday->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Friday->Location = System::Drawing::Point(457, 110);
+			this->Friday->Name = L"Friday";
+			this->Friday->Size = System::Drawing::Size(100, 210);
+			this->Friday->TabIndex = 7;
+			this->Friday->Text = L"Friday";
+			this->Friday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->Friday->UseVisualStyleBackColor = false;
+			this->Friday->Click += gcnew System::EventHandler(this, &ResultWindow::Friday_Click);
+			// 
+			// Thursday
+			// 
+			this->Thursday->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->Thursday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
+			this->Thursday->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Thursday->Location = System::Drawing::Point(351, 110);
+			this->Thursday->Name = L"Thursday";
+			this->Thursday->Size = System::Drawing::Size(100, 210);
+			this->Thursday->TabIndex = 6;
+			this->Thursday->Text = L"Thursday";
+			this->Thursday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->Thursday->UseVisualStyleBackColor = false;
+			this->Thursday->Click += gcnew System::EventHandler(this, &ResultWindow::Thursday_Click);
+			// 
+			// Wednesday
+			// 
+			this->Wednesday->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->Wednesday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
+			this->Wednesday->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Wednesday->Location = System::Drawing::Point(245, 110);
+			this->Wednesday->Name = L"Wednesday";
+			this->Wednesday->Size = System::Drawing::Size(100, 210);
+			this->Wednesday->TabIndex = 5;
+			this->Wednesday->Text = L"Wednesday";
+			this->Wednesday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->Wednesday->UseVisualStyleBackColor = false;
+			this->Wednesday->Click += gcnew System::EventHandler(this, &ResultWindow::Wednesday_Click);
+			// 
+			// Tuesday
+			// 
+			this->Tuesday->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->Tuesday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
+			this->Tuesday->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Tuesday->Location = System::Drawing::Point(139, 110);
+			this->Tuesday->Name = L"Tuesday";
+			this->Tuesday->Size = System::Drawing::Size(100, 210);
+			this->Tuesday->TabIndex = 4;
+			this->Tuesday->Text = L"Tuesday";
+			this->Tuesday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->Tuesday->UseVisualStyleBackColor = false;
+			this->Tuesday->Click += gcnew System::EventHandler(this, &ResultWindow::Tuesday_Click);
+			// 
+			// Monday
+			// 
+			this->Monday->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->Monday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
+			this->Monday->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->Monday->Location = System::Drawing::Point(33, 110);
+			this->Monday->Name = L"Monday";
+			this->Monday->Size = System::Drawing::Size(100, 210);
+			this->Monday->TabIndex = 3;
+			this->Monday->Text = L"Monday";
+			this->Monday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->Monday->UseVisualStyleBackColor = false;
+			this->Monday->Click += gcnew System::EventHandler(this, &ResultWindow::Monday_Click);
 			// 
 			// BackButton
 			// 
@@ -159,103 +259,15 @@ namespace hackathon {
 			this->WeekLabel->Text = L"Week x";
 			this->WeekLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// Monday
+			// QuitButton
 			// 
-			this->Monday->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->Monday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
-			this->Monday->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Monday->Location = System::Drawing::Point(33, 110);
-			this->Monday->Name = L"Monday";
-			this->Monday->Size = System::Drawing::Size(100, 210);
-			this->Monday->TabIndex = 3;
-			this->Monday->Text = L"Monday";
-			this->Monday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->Monday->UseVisualStyleBackColor = false;
-			this->Monday->Click += gcnew System::EventHandler(this, &ResultWindow::Monday_Click);
-			// 
-			// Tuesday
-			// 
-			this->Tuesday->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->Tuesday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
-			this->Tuesday->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Tuesday->Location = System::Drawing::Point(139, 110);
-			this->Tuesday->Name = L"Tuesday";
-			this->Tuesday->Size = System::Drawing::Size(100, 210);
-			this->Tuesday->TabIndex = 4;
-			this->Tuesday->Text = L"Tuesday";
-			this->Tuesday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->Tuesday->UseVisualStyleBackColor = false;
-			this->Tuesday->Click += gcnew System::EventHandler(this, &ResultWindow::Tuesday_Click);
-			// 
-			// Wednesday
-			// 
-			this->Wednesday->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->Wednesday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
-			this->Wednesday->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Wednesday->Location = System::Drawing::Point(245, 110);
-			this->Wednesday->Name = L"Wednesday";
-			this->Wednesday->Size = System::Drawing::Size(100, 210);
-			this->Wednesday->TabIndex = 5;
-			this->Wednesday->Text = L"Wednesday";
-			this->Wednesday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->Wednesday->UseVisualStyleBackColor = false;
-			this->Wednesday->Click += gcnew System::EventHandler(this, &ResultWindow::Wednesday_Click);
-			// 
-			// Thursday
-			// 
-			this->Thursday->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->Thursday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
-			this->Thursday->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Thursday->Location = System::Drawing::Point(351, 110);
-			this->Thursday->Name = L"Thursday";
-			this->Thursday->Size = System::Drawing::Size(100, 210);
-			this->Thursday->TabIndex = 6;
-			this->Thursday->Text = L"Thursday";
-			this->Thursday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->Thursday->UseVisualStyleBackColor = false;
-			this->Thursday->Click += gcnew System::EventHandler(this, &ResultWindow::Thursday_Click);
-			// 
-			// Friday
-			// 
-			this->Friday->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->Friday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
-			this->Friday->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Friday->Location = System::Drawing::Point(457, 110);
-			this->Friday->Name = L"Friday";
-			this->Friday->Size = System::Drawing::Size(100, 210);
-			this->Friday->TabIndex = 7;
-			this->Friday->Text = L"Friday";
-			this->Friday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->Friday->UseVisualStyleBackColor = false;
-			this->Friday->Click += gcnew System::EventHandler(this, &ResultWindow::Friday_Click);
-			// 
-			// Saturday
-			// 
-			this->Saturday->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->Saturday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
-			this->Saturday->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Saturday->Location = System::Drawing::Point(563, 110);
-			this->Saturday->Name = L"Saturday";
-			this->Saturday->Size = System::Drawing::Size(100, 210);
-			this->Saturday->TabIndex = 8;
-			this->Saturday->Text = L"Saturday";
-			this->Saturday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->Saturday->UseVisualStyleBackColor = false;
-			this->Saturday->Click += gcnew System::EventHandler(this, &ResultWindow::Saturday_Click);
-			// 
-			// Sunday
-			// 
-			this->Sunday->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->Sunday->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 11.25F));
-			this->Sunday->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Sunday->Location = System::Drawing::Point(669, 110);
-			this->Sunday->Name = L"Sunday";
-			this->Sunday->Size = System::Drawing::Size(100, 210);
-			this->Sunday->TabIndex = 9;
-			this->Sunday->Text = L"Sunday";
-			this->Sunday->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->Sunday->UseVisualStyleBackColor = false;
-			this->Sunday->Click += gcnew System::EventHandler(this, &ResultWindow::Sunday_Click);
+			this->QuitButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"QuitButton.Image")));
+			this->QuitButton->Location = System::Drawing::Point(813, 0);
+			this->QuitButton->Name = L"QuitButton";
+			this->QuitButton->Size = System::Drawing::Size(47, 46);
+			this->QuitButton->TabIndex = 10;
+			this->QuitButton->UseVisualStyleBackColor = true;
+			this->QuitButton->Click += gcnew System::EventHandler(this, &ResultWindow::QuitButton_Click);
 			// 
 			// ResultWindow
 			// 
@@ -263,6 +275,7 @@ namespace hackathon {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(860, 486);
+			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->ProjectLabel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -310,6 +323,9 @@ private: System::Void Friday_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void Saturday_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void Sunday_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void QuitButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	Application::Exit();
 }
 };
 }
