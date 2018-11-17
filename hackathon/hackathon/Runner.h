@@ -40,6 +40,5 @@ public:
 	//{
 	//	makePhase()
 	//}
-
-	friend class TrainingElements;
+	
 };
