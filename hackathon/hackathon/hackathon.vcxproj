@@ -136,6 +136,7 @@
     <ClCompile Include="ResultWindow.cpp" />
     <ClCompile Include="Runner.cpp" />
     <ClCompile Include="RunnerData.cpp" />
+    <ClCompile Include="SaveToFile.cpp" />
     <ClCompile Include="TrainingElements.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="RunnerData.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SaveToFile.h" />
     <ClInclude Include="TrainingElements.h" />
   </ItemGroup>
   <ItemGroup>
