@@ -3,7 +3,7 @@
 CsvFile::CsvFile(std::string filePath) 
 {
 	this->filePath = filePath;
-	this->myFile.open(filePath, std::ios::in);
+	this->myFile.open(filePath, std::ios::out);
 
 }
 
