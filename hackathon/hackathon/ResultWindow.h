@@ -20,6 +20,7 @@ namespace hackathon {
 			InitializeComponent();
 			this->CenterToScreen();
 			this->WeekLabel->Text = "Week " + this->weekNumber;
+			this->BackButton->Hide();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -144,9 +145,18 @@ namespace hackathon {
 
 		}
 #pragma endregion
-	private: System::Void NextButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
+private: System::Void NextButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->weekNumber++;
+	this->WeekLabel->Text = "Week " + this->weekNumber;
+	this->BackButton->Show();
+}
 private: System::Void BackButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->weekNumber--;
+	this->WeekLabel->Text = "Week " + this->weekNumber;
+	if (this->weekNumber == 1)
+	{
+		this->BackButton->Hide();
+	}
 }
 };
 }
