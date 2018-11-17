@@ -7,19 +7,24 @@ private:
 	std::string name;
 	bool isMale;
 	int age;
-	int distance;
-	double time;
-	double target;
+	
+	//int distance;	// personal best distance
+	int timeIndex;S
+	double target;	// target distance
+
+	int index; // index for runner, how good runner is
+	int trainingDaysAWeek; // based on index score
 
 public:
 	Runner();
-	Runner(std::string, bool, int, int, double, double);
+	Runner(std::string, bool, int, int, double);
 	~Runner();
 
 	std::string getName() const;
 	bool getIsMale() const;
 	int getAge() const;
-	int getDisctance() const;
 	double getTime() const;
 	double getTarget() const;
+
+	void makeIndex();
 };
