@@ -517,10 +517,18 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		Runner test;
 		CsvFile saveFile("../result.csv");
 		std::vector <Week> weeks;
-		Week week1("nothin", "nothin", "nothin", "nothin", "super mega heavy run 2000km in 24h", "rest", "nothin");
-
+		Week week1("rest", "rest", "rest", "rest", "super mega heavy run 2000km in 24h", "rest", "rest");
+		Week week2("rest", "rest", "rest", "rest", "rest", "rest", "rest");
+		Week week3("rest", "rest", "rest", "rest", "rest", "rest", "rest");
+		Week week4("rest", "rest", "rest", "rest", "rest", "rest", "rest");
+		Week week5("rest", "rest", "rest", "rest", "rest", "rest", "rest");
 
 		weeks.push_back(week1);
+		weeks.push_back(week2);
+		weeks.push_back(week3);
+		weeks.push_back(week4);
+		weeks.push_back(week5);
+
 		saveFile.write(weeks);
 
 		// go to next window
