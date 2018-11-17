@@ -3,7 +3,7 @@
 #include "Runner.h"
 
 class TrainingElements {
-private:
+public:
 	Run base1[7];
 	Run base2[7];
 
@@ -16,12 +16,10 @@ private:
 	Run tapering1[7];
 	Run tapering2[7];
 
-public:
+
 	TrainingElements();
 	~TrainingElements();
 
-	void makeRuns(Runner &runner, Run runTab[5]);
-	void makePhase(Runner &runner);
 };
 
 

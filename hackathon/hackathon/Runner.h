@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include "TrainingElements.h"
+#include "Run.h"
+enum type { restDay, recovery, longRun, treshold, interwal };
 
 class Runner {
 
@@ -29,6 +32,14 @@ public:
 
 	void makeIndex();
 	void calculateTrainingDaysAWeek();
+
+	void makeRuns(Run runTab[5]);
+	void makePhase();
+
+	//void createPlan()
+	//{
+	//	makePhase()
+	//}
 
 	friend class TrainingElements;
 };

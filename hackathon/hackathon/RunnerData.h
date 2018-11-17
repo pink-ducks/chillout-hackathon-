@@ -520,6 +520,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		Runner runner(this->isMale,this->SelectTime->SelectedIndex,this->SelectTargetDistance->SelectedIndex);
 		runner.makeIndex();
 		runner.calculateTrainingDaysAWeek();
+		//runner.createPlan();
 
 		// day stauts
 
