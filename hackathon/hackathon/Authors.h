@@ -21,11 +21,14 @@ namespace hackathon {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->CenterToScreen();
 		}
 
 		Authors(System::Windows::Forms::Form ^previousForm) {
 			this->previousForm = previousForm;
 			InitializeComponent();
+			this->CenterToScreen();
+
 		}
 
 
@@ -148,10 +151,9 @@ namespace hackathon {
 		this->previousForm->Close();
 	}
 	private: System::Void back_Click(System::Object^  sender, System::EventArgs^  e) {
-		this->Hide();
-		this->previousForm->ShowDialog();
+		this->Close();
+		this->previousForm->Show();
 	}
 };
 
 }
-

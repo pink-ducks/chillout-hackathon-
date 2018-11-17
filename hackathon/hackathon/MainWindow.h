@@ -73,6 +73,7 @@ namespace hackathon {
 			// 
 			// ProjectLabel
 			// 
+			this->ProjectLabel->BackColor = System::Drawing::SystemColors::Menu;
 			this->ProjectLabel->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ProjectLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei Light", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
