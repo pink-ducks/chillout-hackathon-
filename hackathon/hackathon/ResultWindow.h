@@ -45,7 +45,10 @@ namespace hackathon {
 	private:
 		/// <summary>
 		int weekNumber = 1;
-		/// Required designer variable.
+	private: System::Windows::Forms::Button^  NextButton;
+	private: System::Windows::Forms::Button^  BackButton;
+
+			 /// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
@@ -56,9 +59,12 @@ namespace hackathon {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(ResultWindow::typeid));
 			this->ProjectLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->WeekLabel = (gcnew System::Windows::Forms::Label());
+			this->NextButton = (gcnew System::Windows::Forms::Button());
+			this->BackButton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -78,6 +84,8 @@ namespace hackathon {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->panel1->Controls->Add(this->BackButton);
+			this->panel1->Controls->Add(this->NextButton);
 			this->panel1->Controls->Add(this->WeekLabel);
 			this->panel1->Location = System::Drawing::Point(30, 80);
 			this->panel1->Name = L"panel1";
@@ -97,6 +105,28 @@ namespace hackathon {
 			this->WeekLabel->Text = L"Week x";
 			this->WeekLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// NextButton
+			// 
+			this->NextButton->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->NextButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"NextButton.Image")));
+			this->NextButton->Location = System::Drawing::Point(747, 0);
+			this->NextButton->Name = L"NextButton";
+			this->NextButton->Size = System::Drawing::Size(53, 52);
+			this->NextButton->TabIndex = 1;
+			this->NextButton->UseVisualStyleBackColor = false;
+			this->NextButton->Click += gcnew System::EventHandler(this, &ResultWindow::NextButton_Click);
+			// 
+			// BackButton
+			// 
+			this->BackButton->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->BackButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BackButton.Image")));
+			this->BackButton->Location = System::Drawing::Point(0, 0);
+			this->BackButton->Name = L"BackButton";
+			this->BackButton->Size = System::Drawing::Size(53, 52);
+			this->BackButton->TabIndex = 2;
+			this->BackButton->UseVisualStyleBackColor = false;
+			this->BackButton->Click += gcnew System::EventHandler(this, &ResultWindow::BackButton_Click);
+			// 
 			// ResultWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -114,5 +144,9 @@ namespace hackathon {
 
 		}
 #pragma endregion
-	};
+	private: System::Void NextButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+private: System::Void BackButton_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+};
 }

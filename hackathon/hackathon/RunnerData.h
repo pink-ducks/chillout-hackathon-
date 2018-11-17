@@ -444,7 +444,7 @@ private: System::Void SelectAge_SelectedIndexChanged(System::Object^  sender, Sy
 private: System::Void SelectRecord_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	// create plan button 
+	// create plan 
 	if (!isChecked || this->WriteName->Text == "")
 	{
 		// message
