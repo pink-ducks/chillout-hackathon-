@@ -547,7 +547,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 
 		// go to next window
 		this->Hide();
-		ResultWindow^ resultWindow = gcnew ResultWindow("","Marathon","","","","","");
+		ResultWindow^ resultWindow = gcnew ResultWindow("Rest Day","Rest Day","Rest Day","Marathon","Rest Day","Rest Day","Rest Day");
 		resultWindow->ShowDialog();
 	}
 }
