@@ -30,9 +30,9 @@ namespace hackathon {
 			InitializeComponent();
 			this->CenterToScreen();
 			this->SelectAge->SelectedIndex = 0;
-			this->SelectTime->SelectedIndex = 0;
+			this->SelectTime->SelectedIndex = 23;
 			this->SelectDistance->SelectedIndex = 0;
-			this->SelectTargetDistance->SelectedIndex = 3;
+			this->SelectTargetDistance->SelectedIndex = 0;
 		}
 
 	protected:
@@ -281,7 +281,7 @@ namespace hackathon {
 					L"17:31 - 20:00", L"20:01 - 22:30", L"22:31 - 25:00", L"25:01 - 27:30", L"27:31 - 30:00", L"30:01 - 35:00", L"35:01 - 40:00",
 					L"40:01 - 45:00", L"45:01 - 50:00", L"50:01 - 55:00", L"55:01 - 60:00", L"60:01 - 65:00", L"65:01 - 70:00", L"No Idea"
 			});
-			this->SelectTime->Location = System::Drawing::Point(235, 203);
+			this->SelectTime->Location = System::Drawing::Point(235, 200);
 			this->SelectTime->Name = L"SelectTime";
 			this->SelectTime->Size = System::Drawing::Size(121, 28);
 			this->SelectTime->TabIndex = 14;
@@ -291,7 +291,7 @@ namespace hackathon {
 			this->Time->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Time->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->Time->Location = System::Drawing::Point(232, 231);
+			this->Time->Location = System::Drawing::Point(235, 231);
 			this->Time->Name = L"Time";
 			this->Time->Size = System::Drawing::Size(121, 23);
 			this->Time->TabIndex = 13;
@@ -433,7 +433,7 @@ private: System::Void SelectRecord_SelectedIndexChanged(System::Object^  sender,
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	// create plan button 
-	if (!isChecked)
+	if (!isChecked )//|| this->WriteName->Text->i)
 	{
 		// message
 	}
