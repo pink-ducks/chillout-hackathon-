@@ -433,7 +433,7 @@ private: System::Void SelectRecord_SelectedIndexChanged(System::Object^  sender,
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	// create plan button 
-	if (!isChecked )//|| this->WriteName->Text->i)
+	if (!isChecked || this->WriteName->Text == "")
 	{
 		// message
 	}
