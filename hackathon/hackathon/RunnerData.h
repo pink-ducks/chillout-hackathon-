@@ -1,6 +1,8 @@
 #pragma once
 #include "ResultWindow.h"
 #include "Runner.h"
+#include "SaveToFile.h"
+#include "defines.hpp"
 
 namespace hackathon {
 
@@ -513,6 +515,13 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	{
 		// creating plan
 		Runner test;
+		CsvFile saveFile("../result.csv");
+		std::vector <Week> weeks;
+		Week week1("nothin", "nothin", "nothin", "nothin", "super mega heavy run 2000km in 24h", "rest ;)", "nothin");
+
+
+		weeks.push_back(week1);
+		saveFile.write(weeks);
 
 		// go to next window
 		this->Hide();
