@@ -136,11 +136,13 @@
     <ClCompile Include="ResultWindow.cpp" />
     <ClCompile Include="Runner.cpp" />
     <ClCompile Include="RunnerData.cpp" />
+    <ClCompile Include="SaveToFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Authors.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="defines.hpp" />
     <ClInclude Include="MainWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -151,6 +153,7 @@
     <ClInclude Include="RunnerData.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SaveToFile.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Authors.resx">
