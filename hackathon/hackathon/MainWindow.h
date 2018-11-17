@@ -40,6 +40,8 @@ namespace hackathon {
 	private: System::Windows::Forms::Button^  QuitButton;
 	private: System::Windows::Forms::Button^  startButton;
 	private: System::Windows::Forms::Button^  credits;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
+
 
 
 
@@ -65,6 +67,8 @@ namespace hackathon {
 			this->QuitButton = (gcnew System::Windows::Forms::Button());
 			this->startButton = (gcnew System::Windows::Forms::Button());
 			this->credits = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// ProjectLabel
@@ -74,9 +78,8 @@ namespace hackathon {
 				static_cast<System::Byte>(238)));
 			this->ProjectLabel->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->ProjectLabel->Location = System::Drawing::Point(0, 0);
-			this->ProjectLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->ProjectLabel->Name = L"ProjectLabel";
-			this->ProjectLabel->Size = System::Drawing::Size(1147, 94);
+			this->ProjectLabel->Size = System::Drawing::Size(860, 76);
 			this->ProjectLabel->TabIndex = 0;
 			this->ProjectLabel->Text = L"Your training plan";
 			this->ProjectLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -86,24 +89,22 @@ namespace hackathon {
 			// 
 			this->QuitButton->BackColor = System::Drawing::Color::Transparent;
 			this->QuitButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"QuitButton.Image")));
-			this->QuitButton->Location = System::Drawing::Point(1084, 0);
-			this->QuitButton->Margin = System::Windows::Forms::Padding(4);
+			this->QuitButton->Location = System::Drawing::Point(813, 0);
 			this->QuitButton->Name = L"QuitButton";
-			this->QuitButton->Size = System::Drawing::Size(63, 57);
+			this->QuitButton->Size = System::Drawing::Size(47, 46);
 			this->QuitButton->TabIndex = 1;
 			this->QuitButton->UseVisualStyleBackColor = false;
 			this->QuitButton->Click += gcnew System::EventHandler(this, &MainWindow::QuitButton_Click);
 			// 
 			// startButton
 			// 
-			this->startButton->BackColor = System::Drawing::SystemColors::HotTrack;
-			this->startButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->startButton->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->startButton->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->startButton->ForeColor = System::Drawing::Color::White;
-			this->startButton->Location = System::Drawing::Point(436, 252);
-			this->startButton->Margin = System::Windows::Forms::Padding(4);
+			this->startButton->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->startButton->Location = System::Drawing::Point(340, 255);
 			this->startButton->Name = L"startButton";
-			this->startButton->Size = System::Drawing::Size(269, 84);
+			this->startButton->Size = System::Drawing::Size(202, 68);
 			this->startButton->TabIndex = 0;
 			this->startButton->Text = L"Make your own training plan!";
 			this->startButton->UseVisualStyleBackColor = false;
@@ -111,34 +112,43 @@ namespace hackathon {
 			// 
 			// credits
 			// 
-			this->credits->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->credits->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->credits->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->credits->ForeColor = System::Drawing::Color::White;
-			this->credits->Location = System::Drawing::Point(995, 546);
-			this->credits->Margin = System::Windows::Forms::Padding(4);
+			this->credits->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->credits->Location = System::Drawing::Point(746, 444);
 			this->credits->Name = L"credits";
-			this->credits->Size = System::Drawing::Size(139, 39);
+			this->credits->Size = System::Drawing::Size(104, 32);
 			this->credits->TabIndex = 2;
 			this->credits->Text = L"Credits";
 			this->credits->UseVisualStyleBackColor = false;
 			this->credits->Click += gcnew System::EventHandler(this, &MainWindow::credits_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->Location = System::Drawing::Point(-2, 52);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(862, 548);
+			this->pictureBox1->TabIndex = 3;
+			this->pictureBox1->TabStop = false;
+			// 
 			// MainWindow
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->ClientSize = System::Drawing::Size(1147, 598);
+			this->ClientSize = System::Drawing::Size(860, 486);
 			this->Controls->Add(this->credits);
 			this->Controls->Add(this->startButton);
 			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->ProjectLabel);
+			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MainWindow";
 			this->Text = L"MainWindow";
 			this->Load += gcnew System::EventHandler(this, &MainWindow::MainWindow_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}

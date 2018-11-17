@@ -483,3 +483,4 @@ private: System::Void textBox1_TextChanged(System::Object^  sender, System::Even
 };
 
 }
+
