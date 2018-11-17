@@ -63,6 +63,7 @@ namespace hackathon {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		int numChoice = 0;
+		bool isMale = true;
 		bool isChecked = false;
 		int previousChoice = -1;
 		System::Windows::Forms::Form ^previousForm;
@@ -410,9 +411,9 @@ namespace hackathon {
 	private: System::Void sexChoice_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	
 
-		if (this->sexChoice->SelectedIndex == 0)
+		if (this->sexChoice->SelectedIndex == 0) // MALE
 		{
-
+			this->isMale = true;
 			if (this->previousChoice == 1 && numChoice % 2)
 			{
 				this->numChoice = 0;
@@ -429,8 +430,9 @@ namespace hackathon {
 			this->numChoice++;
 			this->previousChoice = 0;
 		}
-		else
+		else // FEMALE
 		{
+			this->isMale = false;
 			if (this->previousChoice == 0 && numChoice % 2)
 			{
 				this->numChoice = 0;
@@ -515,7 +517,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	else
 	{
 		// creating plan
-		Runner test;
+		Runner runner(this->isMale,this->SelectTime->SelectedIndex,this->SelectTargetDistance->SelectedIndex);
 
 		// save file 
 
