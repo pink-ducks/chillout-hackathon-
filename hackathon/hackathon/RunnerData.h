@@ -31,7 +31,6 @@ namespace hackathon {
 			InitializeComponent();
 			this->CenterToScreen();
 			this->SelectAge->SelectedIndex = 0;
-			this->SelectTime->SelectedIndex = 23;
 			this->SelectDistance->SelectedIndex = 0;
 			this->SelectTargetDistance->SelectedIndex = 0;
 			this->MessageLabel->Hide();
@@ -81,6 +80,7 @@ namespace hackathon {
 
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Label^  MessageLabel;
+
 
 
 
@@ -280,16 +280,11 @@ namespace hackathon {
 				static_cast<System::Byte>(238)));
 			this->SelectTime->ForeColor = System::Drawing::SystemColors::Desktop;
 			this->SelectTime->FormattingEnabled = true;
-			this->SelectTime->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
-				L"6:01 - 7:00", L"7:01 - 8:00", L"8:01 - 9:00",
-					L"9:01 - 10:00", L"10:01 - 11:00", L"11:01 - 12:00", L"12:01 - 13:00", L"13:01 - 14:00", L"14:01 - 15:00", L"15:01 - 17:30",
-					L"17:31 - 20:00", L"20:01 - 22:30", L"22:31 - 25:00", L"25:01 - 27:30", L"27:31 - 30:00", L"30:01 - 35:00", L"35:01 - 40:00",
-					L"40:01 - 45:00", L"45:01 - 50:00", L"50:01 - 55:00", L"55:01 - 60:00", L"60:01 - 65:00", L"65:01 - 70:00", L"No Idea"
-			});
 			this->SelectTime->Location = System::Drawing::Point(235, 200);
 			this->SelectTime->Name = L"SelectTime";
 			this->SelectTime->Size = System::Drawing::Size(121, 28);
 			this->SelectTime->TabIndex = 14;
+			this->SelectTime->SelectedIndexChanged += gcnew System::EventHandler(this, &RunnerData::SelectTime_SelectedIndexChanged);
 			// 
 			// Time
 			// 
@@ -460,6 +455,53 @@ private: System::Void SelectAge_SelectedIndexChanged(System::Object^  sender, Sy
 
 }
 private: System::Void SelectRecord_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	if (this->SelectDistance->SelectedIndex == 0)
+	{
+		this->SelectTime->Items->Clear();
+		this->SelectTime->Items->Clear();
+		this->SelectTime->Items->Insert(0, L"6:01 - 7:00");
+		this->SelectTime->Items->Insert(1, L"7:01 - 8:00");
+		this->SelectTime->Items->Insert(2, L"8:01 - 9:00");
+		this->SelectTime->Items->Insert(3, L"9:01 - 10:00");
+		this->SelectTime->Items->Insert(4, L"10:01 - 11:00");
+		this->SelectTime->Items->Insert(5, L"11:01 - 12:00");
+		this->SelectTime->Items->Insert(6, L"12:01 - 13:00");
+		this->SelectTime->Items->Insert(7, L"13:01 - 14:00");
+		this->SelectTime->Items->Insert(8, L"14:01 - 15:00");
+		this->SelectTime->Items->Insert(9, L"No Idea");
+		this->SelectTime->SelectedIndex = 0;
+	}
+	else if (this->SelectDistance->SelectedIndex == 1)
+	{
+		this->SelectTime->Items->Clear();
+		this->SelectTime->Items->Insert(0, L"15:01 - 17:30");
+		this->SelectTime->Items->Insert(1, L"17:31 - 20:00");
+		this->SelectTime->Items->Insert(2, L"20:01 - 22:30");
+		this->SelectTime->Items->Insert(3, L"22:31 - 25:00");
+		this->SelectTime->Items->Insert(4, L"25:01 - 27:30");
+		this->SelectTime->Items->Insert(5, L"27:31 - 30:00");
+		this->SelectTime->Items->Insert(6, L"30:01 - 32:50");
+		this->SelectTime->Items->Insert(7, L"32:51 - 35:00");
+		this->SelectTime->Items->Insert(8, L"35:01 - 37:30");
+		this->SelectTime->Items->Insert(9, L"No Idea");
+		this->SelectTime->SelectedIndex = 0;
+	}
+	else if (this->SelectDistance->SelectedIndex == 2)
+	{
+		this->SelectTime->Items->Clear();
+		this->SelectTime->Items->Clear();
+		this->SelectTime->Items->Insert(0, L"30:01 - 35:00");
+		this->SelectTime->Items->Insert(1, L"35:01 - 40:00");
+		this->SelectTime->Items->Insert(2, L"40:01 - 45:00");
+		this->SelectTime->Items->Insert(3, L"45:01 - 50:00");
+		this->SelectTime->Items->Insert(4, L"50:01 - 55:00");
+		this->SelectTime->Items->Insert(5, L"55:01 - 60:00");
+		this->SelectTime->Items->Insert(6, L"60:01 - 65:00");
+		this->SelectTime->Items->Insert(7, L"65:01 - 70:00");
+		this->SelectTime->Items->Insert(8, L"70:01 - 75:00");
+		this->SelectTime->Items->Insert(9, L"No Idea");
+		this->SelectTime->SelectedIndex = 0;
+	}
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	// create plan 
@@ -479,6 +521,9 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	}
 }
 private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void SelectTime_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	
 }
 };
 
