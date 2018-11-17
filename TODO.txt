@@ -1,0 +1,21 @@
+Runner.cpp
+-
+vector <Week> Runner::createPlan() -> zwracaæ vector Week
+-----------------------------------------------------
+RunnerData.h
+-
+Runner runner(this->isMale,this->SelectTime->SelectedIndex,this->SelectTargetDistance->SelectedIndex);
+runner.makeIndex();
+runner.calculateTrainingDaysAWeek();
+vector <Week> weeks = runner.createPlan();
+// wykomentowac wszytko zwiazane z zapisem do pliku
+ResultWindow^ resultWindow = gcnew ResultWindow(week[0].monday,week[0].tuesday,...);
+------------------------------------------------------
+ResultWindow.h
+-
+w ciele funkcji NextButton_Click
+this->monday->text =  week[weeknumber-1].monday;
+this->tuesday->text = week[weeknumber-1].tuesday;
+...
+
+w ciele funkcji BackButton to samo co nextButton
