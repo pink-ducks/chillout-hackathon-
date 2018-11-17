@@ -12,7 +12,7 @@ private:
 	int timeIndex;
 	int target;	// target distance
 
-	int index; // index for runner, how good runner is
+	double index; // index for runner, how good runner is
 	int trainingDaysAWeek; // based on index score
 
 public:

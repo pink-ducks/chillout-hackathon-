@@ -521,6 +521,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		runner.makeIndex();
 		runner.calculateTrainingDaysAWeek();
 
+		// day stauts
 
 		// save file 
 

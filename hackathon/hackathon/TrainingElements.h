@@ -20,6 +20,7 @@ public:
 	TrainingElements();
 	~TrainingElements();
 
+	void makeRuns(Runner &runner, Run runTab[5]);
 	void makePhase(Runner &runner);
 };
 
