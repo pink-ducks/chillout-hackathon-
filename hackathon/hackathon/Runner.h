@@ -16,6 +16,7 @@ public:
 	Runner(std::string, bool, int, int, double, double);
 	~Runner();
 
+	std::string getName() const;
 	bool getIsMale() const;
 	int getAge() const;
 	int getDisctance() const;

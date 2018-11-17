@@ -1,5 +1,6 @@
 #include "Runner.h"
 
+//constructors
 Runner::Runner()
 {
 }
@@ -14,6 +15,12 @@ Runner::~Runner()
 }
 
 //getters
+
+std::string Runner::getName() const
+{
+	return name;
+}
+
 bool Runner::getIsMale() const
 {
 	return isMale;
