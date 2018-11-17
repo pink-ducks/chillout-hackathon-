@@ -1,5 +1,6 @@
 #pragma once
 #include "ResultWindow.h"
+#include "Runner.h"
 
 namespace hackathon {
 
@@ -33,6 +34,7 @@ namespace hackathon {
 			this->SelectTime->SelectedIndex = 23;
 			this->SelectDistance->SelectedIndex = 0;
 			this->SelectTargetDistance->SelectedIndex = 0;
+			this->MessageLabel->Hide();
 		}
 
 	protected:
@@ -78,6 +80,7 @@ namespace hackathon {
 	private: System::Windows::Forms::TextBox^  WriteName;
 
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Label^  MessageLabel;
 
 
 
@@ -115,6 +118,7 @@ namespace hackathon {
 			this->SelectAge = (gcnew System::Windows::Forms::ComboBox());
 			this->Record = (gcnew System::Windows::Forms::Label());
 			this->Age = (gcnew System::Windows::Forms::Label());
+			this->MessageLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -366,6 +370,18 @@ namespace hackathon {
 			this->Age->Text = L"Age";
 			this->Age->Click += gcnew System::EventHandler(this, &RunnerData::label1_Click);
 			// 
+			// MessageLabel
+			// 
+			this->MessageLabel->AutoSize = true;
+			this->MessageLabel->BackColor = System::Drawing::SystemColors::GrayText;
+			this->MessageLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 13, System::Drawing::FontStyle::Bold));
+			this->MessageLabel->ForeColor = System::Drawing::SystemColors::InactiveBorder;
+			this->MessageLabel->Location = System::Drawing::Point(201, 459);
+			this->MessageLabel->Name = L"MessageLabel";
+			this->MessageLabel->Size = System::Drawing::Size(467, 25);
+			this->MessageLabel->TabIndex = 7;
+			this->MessageLabel->Text = L"You have to write your name and choose your sex!";
+			// 
 			// RunnerData
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -373,6 +389,7 @@ namespace hackathon {
 			this->BackColor = System::Drawing::SystemColors::ScrollBar;
 			this->ClientSize = System::Drawing::Size(860, 486);
 			this->ControlBox = false;
+			this->Controls->Add(this->MessageLabel);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->QuitButton);
 			this->Controls->Add(this->ProjectLabel);
@@ -382,6 +399,7 @@ namespace hackathon {
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -447,10 +465,14 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	// create plan 
 	if (!isChecked || this->WriteName->Text == "")
 	{
-		// message
+		this->MessageLabel->Show();
 	}
 	else
 	{
+		// creating plan
+		Runner test;
+
+		// go to next window
 		this->Hide();
 		ResultWindow^ resultWindow = gcnew ResultWindow();
 		resultWindow->ShowDialog();
