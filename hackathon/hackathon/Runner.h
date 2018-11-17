@@ -28,4 +28,6 @@ public:
 
 	void makeIndex();
 	void calculateTrainingDaysAWeek();
+
+	friend class TrainingElements;
 };

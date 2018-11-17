@@ -30,7 +30,7 @@
     <ClCompile Include="ResultWindow.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="SaveToFile.cpp">
+    <ClCompile Include="TrainingElements.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,10 +50,10 @@
     <ClInclude Include="ResultWindow.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="SaveToFile.h">
+    <ClInclude Include="TrainingElements.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="defines.hpp">
+    <ClInclude Include="Run.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,6 +65,9 @@
       <Filter>Pliki zasobów</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Authors.resx">
+      <Filter>Pliki zasobów</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultWindow.resx">
       <Filter>Pliki zasobów</Filter>
     </EmbeddedResource>
   </ItemGroup>

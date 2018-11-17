@@ -1,19 +1,26 @@
 #pragma once
-//#include"Day.h"
-struct TrainingElements {
+#include"Run.h"
+#include "Runner.h"
+class TrainingElements {
+private:
 	Run base1[7];
-	day base2[7];
+	Run base2[7];
 
-	day build1[7];
-	day build2[7];
+	Run build1[7];
+	Run build2[7];
 	
-	day peak1[7];
-	day peak2[7];
+	Run peak1[7];
+	Run peak2[7];
 
-	day tapering1;
-	day tapering2;
-	day tapering3;
+	Run tapering1[7];
+	Run tapering2[7];
+	Run tapering3[7];
+
+public:
+	TrainingElements();
+	~TrainingElements();
+
+	void makePhase(Runner &runner);
 };
 
-base1[0] = interwal;
-base1[1] = longRun;
+

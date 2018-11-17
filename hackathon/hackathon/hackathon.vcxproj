@@ -136,24 +136,24 @@
     <ClCompile Include="ResultWindow.cpp" />
     <ClCompile Include="Runner.cpp" />
     <ClCompile Include="RunnerData.cpp" />
-    <ClCompile Include="SaveToFile.cpp" />
+    <ClCompile Include="TrainingElements.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Authors.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="defines.hpp" />
     <ClInclude Include="MainWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ResultWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Run.h" />
     <ClInclude Include="Runner.h" />
     <ClInclude Include="RunnerData.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="SaveToFile.h" />
+    <ClInclude Include="TrainingElements.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Authors.resx">
