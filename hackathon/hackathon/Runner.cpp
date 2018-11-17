@@ -1,6 +1,9 @@
 ﻿#include "Runner.h"
-
+#include "defines.hpp"
+#include "TrainingElements.h"
 //constructors
+
+enum runType{km5,km10, halfmarathon, marathon};
 Runner::Runner()
 {
 }
@@ -11,7 +14,7 @@ isMale(isMale), age(age), timeIndex(timeIndex), target(target)
 }
 
 Runner::Runner(bool isMale, int SelectedTimeIndex, int SelectedTargetIndex)
-{								
+{
 	this->isMale = isMale;
 	this->timeIndex = SelectedTimeIndex;
 	this->target = SelectedTargetIndex;
@@ -75,7 +78,7 @@ void Runner::makeRuns(Run runTab[5])
 }
 
 
-void Runner::makePhase()
+TrainingElements Runner::makePhase()
 {
 	TrainingElements element;
 	Run runTab[5];
@@ -379,5 +382,24 @@ void Runner::makePhase()
 		element.tapering2[5] = runTab[restDay];
 		element.tapering2[6] = runTab[restDay];
 	}
+	return element;
+}
 
+
+string dayToString(Run run) {
+		return to_string(run.distance) + to_string(run.pace) + to_string(run.repetition);
+}
+
+void Runner::createPlan()
+{
+	TrainingElements element = makePhase();
+	
+	if (target == km5)
+	{
+		Week week1(dayToString(element.base1[0]), dayToString(element.base1[1]), dayToString(element.base1[2]), dayToString(element.base1[3]), dayToString(element.base1[4]), dayToString(element.base1[5]), dayToString(element.base1[6]));
+		Week week2(dayToString(element.base2[0]), dayToString(element.base2[1]), dayToString(element.base1[2]), dayToString(element.base2[3]), dayToString(element.base2[4]), dayToString(element.base2[5]), dayToString(element.base2[6]));
+		Week week3(dayToString(element.base1[0]), dayToString(element.base1[1]), dayToString(element.base1[2]), dayToString(element.base1[3]), dayToString(element.base1[4]), dayToString(element.base1[5]), dayToString(element.base1[6]));
+		Week week4(dayToString(element.base2[0]), dayToString(element.base2[1]), dayToString(element.base1[2]), dayToString(element.base2[3]), dayToString(element.base2[4]), dayToString(element.base2[5]), dayToString(element.base2[6]));
+		Week week5(dayToString(element.build1[0]), dayToString(element.build1[1]), dayToString(element.build1[2]), dayToString(element.build1[3]), dayToString(element.build1[4]), dayToString(element.build1[5]), dayToString(element.build1[6]));
+	}
 }

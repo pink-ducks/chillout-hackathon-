@@ -1,6 +1,5 @@
 #pragma once
 #include"Run.h"
-#include "Runner.h"
 
 class TrainingElements {
 public:
@@ -19,7 +18,6 @@ public:
 
 	TrainingElements();
 	~TrainingElements();
-
 };
 
 

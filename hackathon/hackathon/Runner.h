@@ -29,16 +29,13 @@ public:
 	int getAge() const;
 	double getTime() const;
 	double getTarget() const;
+	TrainingElements makePhase();
 
 	void makeIndex();
 	void calculateTrainingDaysAWeek();
 
 	void makeRuns(Run runTab[5]);
-	void makePhase();
 
-	//void createPlan()
-	//{
-	//	makePhase()
-	//}
+	void createPlan();
 	
 };
