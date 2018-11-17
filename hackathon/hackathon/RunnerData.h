@@ -60,6 +60,7 @@ namespace hackathon {
 		/// Wymagana zmienna projektanta.
 		int numChoice = 0;
 		bool isChecked = false;
+		int previousChoice = -1;
 		System::Windows::Forms::Form ^previousForm;
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Label^  Age;
@@ -395,6 +396,11 @@ namespace hackathon {
 
 		if (this->sexChoice->SelectedIndex == 0)
 		{
+
+			if (this->previousChoice == 1 && numChoice % 2)
+			{
+				this->numChoice = 0;
+			}
 			if (numChoice % 2)
 			{
 				this->isChecked = false;
@@ -405,9 +411,14 @@ namespace hackathon {
 			}
 			this->sexChoice->SetItemChecked(1, 0);
 			this->numChoice++;
+			this->previousChoice = 0;
 		}
 		else
 		{
+			if (this->previousChoice == 0 && numChoice % 2)
+			{
+				this->numChoice = 0;
+			}
 			if (numChoice % 2)
 			{
 				this->isChecked = false;
@@ -418,6 +429,7 @@ namespace hackathon {
 			}
 			this->sexChoice->SetItemChecked(0, 0);
 			this->numChoice++;
+			this->previousChoice = 1;
 
 		}
 	}
