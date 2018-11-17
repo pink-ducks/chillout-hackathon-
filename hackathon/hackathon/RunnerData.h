@@ -58,6 +58,8 @@ namespace hackathon {
 	private:
 		/// <summary>
 		/// Wymagana zmienna projektanta.
+		int numChoice = 0;
+		bool isChecked = false;
 		System::Windows::Forms::Form ^previousForm;
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Label^  Age;
@@ -72,7 +74,8 @@ namespace hackathon {
 
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::TextBox^  WriteName;
+
 	private: System::Windows::Forms::Button^  button1;
 
 
@@ -98,7 +101,8 @@ namespace hackathon {
 			this->sexChoice = (gcnew System::Windows::Forms::CheckedListBox());
 			this->Sex = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->WriteName = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SelectTargetDistance = (gcnew System::Windows::Forms::ComboBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -110,7 +114,6 @@ namespace hackathon {
 			this->SelectAge = (gcnew System::Windows::Forms::ComboBox());
 			this->Record = (gcnew System::Windows::Forms::Label());
 			this->Age = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -169,7 +172,7 @@ namespace hackathon {
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->panel1->Controls->Add(this->button1);
-			this->panel1->Controls->Add(this->textBox1);
+			this->panel1->Controls->Add(this->WriteName);
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->SelectTargetDistance);
 			this->panel1->Controls->Add(this->label1);
@@ -188,17 +191,31 @@ namespace hackathon {
 			this->panel1->Size = System::Drawing::Size(400, 377);
 			this->panel1->TabIndex = 6;
 			// 
-			// textBox1
+			// button1
 			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::Window;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->textBox1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->textBox1->Location = System::Drawing::Point(83, 24);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(121, 27);
-			this->textBox1->TabIndex = 19;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &RunnerData::textBox1_TextChanged);
+			this->button1->ForeColor = System::Drawing::SystemColors::InactiveBorder;
+			this->button1->Location = System::Drawing::Point(95, 329);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(206, 48);
+			this->button1->TabIndex = 20;
+			this->button1->Text = L"CREATE TRAINING PLAN";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &RunnerData::button1_Click);
+			// 
+			// WriteName
+			// 
+			this->WriteName->BackColor = System::Drawing::SystemColors::Window;
+			this->WriteName->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->WriteName->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->WriteName->Location = System::Drawing::Point(83, 24);
+			this->WriteName->Name = L"WriteName";
+			this->WriteName->Size = System::Drawing::Size(121, 27);
+			this->WriteName->TabIndex = 19;
+			this->WriteName->TextChanged += gcnew System::EventHandler(this, &RunnerData::textBox1_TextChanged);
 			// 
 			// label2
 			// 
@@ -348,20 +365,6 @@ namespace hackathon {
 			this->Age->Text = L"Age";
 			this->Age->Click += gcnew System::EventHandler(this, &RunnerData::label1_Click);
 			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::SystemColors::HotTrack;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->button1->ForeColor = System::Drawing::SystemColors::InactiveBorder;
-			this->button1->Location = System::Drawing::Point(95, 329);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(206, 48);
-			this->button1->TabIndex = 20;
-			this->button1->Text = L"CREATE TRAINING PLAN";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &RunnerData::button1_Click);
-			// 
 			// RunnerData
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -389,13 +392,33 @@ namespace hackathon {
 
 	private: System::Void sexChoice_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	
+
 		if (this->sexChoice->SelectedIndex == 0)
 		{
+			if (numChoice % 2)
+			{
+				this->isChecked = false;
+			}
+			else
+			{
+				this->isChecked = true;
+			}
 			this->sexChoice->SetItemChecked(1, 0);
+			this->numChoice++;
 		}
 		else
 		{
+			if (numChoice % 2)
+			{
+				this->isChecked = false;
+			}
+			else
+			{
+				this->isChecked = true;
+			}
 			this->sexChoice->SetItemChecked(0, 0);
+			this->numChoice++;
+
 		}
 	}
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -410,9 +433,16 @@ private: System::Void SelectRecord_SelectedIndexChanged(System::Object^  sender,
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	// create plan button 
-	this->Hide();
-	ResultWindow^ resultWindow = gcnew ResultWindow();
-	resultWindow->ShowDialog();
+	if (!isChecked)
+	{
+		// message
+	}
+	else
+	{
+		this->Hide();
+		ResultWindow^ resultWindow = gcnew ResultWindow();
+		resultWindow->ShowDialog();
+	}
 }
 private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
