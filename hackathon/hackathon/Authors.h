@@ -117,9 +117,9 @@ namespace hackathon {
 			this->back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->back->ForeColor = System::Drawing::Color::White;
-			this->back->Location = System::Drawing::Point(761, 426);
+			this->back->Location = System::Drawing::Point(746, 444);
 			this->back->Name = L"back";
-			this->back->Size = System::Drawing::Size(87, 36);
+			this->back->Size = System::Drawing::Size(104, 32);
 			this->back->TabIndex = 6;
 			this->back->Text = L"Back";
 			this->back->UseVisualStyleBackColor = false;
