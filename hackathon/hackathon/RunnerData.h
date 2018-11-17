@@ -518,6 +518,9 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	{
 		// creating plan
 		Runner runner(this->isMale,this->SelectTime->SelectedIndex,this->SelectTargetDistance->SelectedIndex);
+		runner.makeIndex();
+		runner.calculateTrainingDaysAWeek();
+
 
 		// save file 
 
@@ -544,7 +547,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 
 		// go to next window
 		this->Hide();
-		ResultWindow^ resultWindow = gcnew ResultWindow();
+		ResultWindow^ resultWindow = gcnew ResultWindow("","Marathon","","","","","");
 		resultWindow->ShowDialog();
 	}
 }

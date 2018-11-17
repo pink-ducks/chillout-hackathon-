@@ -26,6 +26,28 @@ namespace hackathon {
 			//
 		}
 
+		ResultWindow(System::String^ a, System::String^b, System::String^ c, System::String^ d, System::String^ e, System::String^ f, System::String^ g)
+		{
+			InitializeComponent();
+			this->CenterToScreen();
+			this->WeekLabel->Text = "Week " + this->weekNumber;
+			this->BackButton->Hide();
+			this->Monday->Text = a;
+			this->Tuesday->Text = b;
+			this->Wednesday->Text = c;
+			this->Thursday->Text = d;
+			this->Friday->Text = e;
+			this->Saturday->Text = f;
+			this->Sunday->Text = g;
+
+			if (a != "")
+			{
+				// SET COLOR 
+				// this->Monday->BackColor =
+			}
+
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
