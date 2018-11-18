@@ -515,7 +515,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	else
 	{
 		// creating plan
-		Runner test;
+		Runner runner(this->SelectTime->SelectedIndex, this->SelectTargetDistance -> SelectedIndex);
 		string filename;
 		System::String^ userName = this->WriteName->Text;
 		filename = "../" + msclr::interop::marshal_as<std::string>(userName); // convert text to string 
@@ -523,7 +523,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 
 		CsvFile saveFile(filename);
 		std::vector <Week> weeks;
-		Week week1("rest", "rest", "rest", "rest", "super mega heavy run 2000km in 24h", "rest", "rest");
+		Week week1("rest","rest", "rest", "rest", "super mega heavy run 2000km in 24h", "rest", "rest");
 		Week week2("rest", "rest", "rest", "rest", "rest", "rest", "rest");
 		Week week3("rest", "rest", "rest", "rest", "rest", "rest", "rest");
 		Week week4("rest", "rest", "rest", "rest", "rest", "rest", "rest");

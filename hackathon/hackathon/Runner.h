@@ -21,7 +21,7 @@ private:
 public:
 	Runner();
 	Runner(std::string, bool, int, int, double);
-	Runner(bool isMale, int SelectedTimeIndex, int SelectedTargetIndex);
+	Runner(int SelectedTimeIndex, int SelectedTargetIndex);
 	~Runner();
 
 	std::string getName() const;
@@ -35,7 +35,6 @@ public:
 	void calculateTrainingDaysAWeek();
 
 	void makeRuns(Run runTab[5]);
-
 	void createPlan();
 	
 };
